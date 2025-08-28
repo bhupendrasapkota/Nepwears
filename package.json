@@ -1,0 +1,45 @@
+{
+  "name": "nepwears",
+  "version": "1.0.0",
+  "description": "A full-featured MERN stack e-commerce web application built for modern online retail experiences.",
+  "main": "./src/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/index.js",
+    "dev": "nodemon ./src/index.js"
+  },
+  "keywords": [
+    "nepwears",
+    "e-commerce",
+    "MERN stack",
+    "React",
+    "Node.js",
+    "MongoDB",
+    "Express.js",
+    "web application",
+    "online store",
+    "shopping website"
+  ],
+  "author": "Nepwears-Teams",
+  "license": "ISC",
+  "engines": {
+    "node": "22.x"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "body-parser": "^2.2.0",
+    "cloudinary": "^2.7.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.16.4",
+    "multer": "^2.0.2",
+    "resend": "^4.7.0",
+    "twilio": "^5.8.0"
+  }
+}
