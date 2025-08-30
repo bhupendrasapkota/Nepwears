@@ -69,6 +69,7 @@ export function formatCategoryResponse(collection) {
 
 export function formatCollectionResponse(collection) {
   return {
+    ...formatCategoryResponse(collection),
     products: collection.products.map(formatAllProductResponse),
   };
 }
