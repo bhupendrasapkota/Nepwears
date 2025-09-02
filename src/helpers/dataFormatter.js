@@ -83,7 +83,7 @@ export function formatCartResponse(cart) {
       itemId: item._id,
       name: product.name,
       brand: product.brand,
-      imageUrls: product.imageUrls,
+      imageUrls: variant.imageUrls[0],
       color: variant.color,
       size: variant.size,
       price: variant.salePrice ?? variant.price,
