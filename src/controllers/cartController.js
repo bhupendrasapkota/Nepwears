@@ -40,8 +40,9 @@ const getCart = async (req, res) => {
 
     if (!cart || cart.items.length === 0) {
       return res.status(404).json({
-        success: false,
+        success: true,
         message: "Cart is empty.",
+        cart:[],
       });
     }
 
