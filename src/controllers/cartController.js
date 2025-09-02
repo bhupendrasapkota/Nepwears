@@ -39,7 +39,7 @@ const getCart = async (req, res) => {
     const cart = await cartService.getCart(loggedInUser);
 
     if (!cart || cart.items.length === 0) {
-      return res.status(404).json({
+      return res.status(200).json({
         success: true,
         message: "Cart is empty.",
         cart:[],
