@@ -96,14 +96,14 @@ export const calculateOrderTotals = (items) => {
   let taxTotal = 0;
 
   for (const item of items) {
-    subtotal += item.unitPrice * item.quantity; // before discount
+    subtotal += item.unitPrice * item.quantity;
     discountTotal += item.discountAmount || 0;
     taxTotal += item.taxAmount || 0;
   }
 
-  const effectiveSubtotal = subtotal - discountTotal;
-  const shippingCost = calculateShippingCost(effectiveSubtotal);
-  const totalAmount = effectiveSubtotal + taxTotal + shippingCost;
+  // Shipping is calculated on the subtotal (sale price total)
+  const shippingCost = calculateShippingCost(subtotal);
+  const totalAmount = subtotal + taxTotal + shippingCost;
 
   return {
     subtotal,
@@ -164,7 +164,7 @@ export const calculateItemPricing = (
     ? (variant.price - variant.salePrice) * quantity
     : 0;
 
-  const taxableAmount = baseTotal - discountAmount;
+  const taxableAmount = baseTotal;
   const taxAmount = taxRate > 0 ? taxableAmount * taxRate : 0;
 
   return {

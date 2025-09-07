@@ -87,6 +87,7 @@ export function formatCartResponse(cart) {
       color: variant.color,
       size: variant.size,
       price: variant.salePrice ?? variant.price,
+      originalPrice: variant.price,
       quantity: item.quantity,
     };
   });
@@ -334,14 +335,14 @@ export function formatProductRatingResponse(ratingData) {
         ratingData.average >= 4.5
           ? "Excellent"
           : ratingData.average >= 4.0
-            ? "Very Good"
-            : ratingData.average >= 3.5
-              ? "Good"
-              : ratingData.average >= 3.0
-                ? "Average"
-                : ratingData.average >= 2.0
-                  ? "Below Average"
-                  : "Poor",
+          ? "Very Good"
+          : ratingData.average >= 3.5
+          ? "Good"
+          : ratingData.average >= 3.0
+          ? "Average"
+          : ratingData.average >= 2.0
+          ? "Below Average"
+          : "Poor",
     },
   };
 }
